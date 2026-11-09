@@ -26,7 +26,7 @@
 ## 固定規則
 - 做題者不閱卷：builder 與 reviewer 不同模型家族
 - 只開 branch 與 PR，merge 只由 Kuei 執行
-- 每個 PR 附報告：做了什麼、證據（指令與結果）、未解問題
+- 每個 PR 附報告：做了什麼、證據（指令與結果）、未解問題、需要 Kuei 決定的事
 - 決策記在 docs/decisions.md（問題｜選擇｜理由｜日期）
 - 每個 milestone 結束寫一份濃縮摘要到 docs/milestones/
 
