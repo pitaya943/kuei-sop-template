@@ -1,6 +1,8 @@
 # 分工計畫（一頁） / Work plan (one page)
 
-Kuei decision 2026-11-11 19:47. Copy this page per task. Fill every blank before work starts.
+Kuei decision 2026-11-11 19:47. Copy this page per task. Fill every blank before work starts. Source of truth for the work plan: this file. `AGENTS.md` must match it.
+
+Roles / 角色：Alex `<drafts the work plan>`，Chief `<reviews the plan>`，Vera `<verification; PASS before @claude review>`，Kuei `<approves done-when and merges>`。
 
 Flow / 流程: Alex drafts → Chief reviews → Kuei approves the done-when → work starts. Independent tickets run in parallel. Never give a whole task to one agent to do in sequence.
 
@@ -29,7 +31,7 @@ Never Opus. This covers every role: build, fix rounds, and verification.
 | Role | Model | Rule |
 |------|-------|------|
 | build / 實作 | <model> | Writes the ticket. |
-| fix rounds / 修復輪 | <stronger model than build> | Stronger than the builder. |
+| fix rounds / 修復輪 | <stronger model than build> | Stronger than the builder. If none is stronger, use the same model and record it. |
 | verification / 驗證 | <model> | Different model family from the builder. When only one family is available, use it and record that model in the verdict. |
 
 Verdict / 驗證結論（fill after the check）: builder `<model>`, verifier `<model>`, family `<same / different>`, note `<if only one family: say so>`.

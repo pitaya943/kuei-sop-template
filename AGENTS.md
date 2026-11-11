@@ -15,6 +15,7 @@
 - <例：研究假設、實驗設計、評估指標>
 
 ## 審查深度
+- Roles / 角色：Alex `<drafts the work plan>`，Chief `<reviews the plan>`，Vera `<verification; PASS before @claude review>`，Kuei `<approves done-when and merges>`。
 - Vera PASS 之後，每個 PR 都跑 @claude review，然後 Kuei merge。
 - 重大變更：開工前再跑一次 interrogate（選用）
 - `@claude review` 只是審查，不會自動跑 grill-me；需要 grill-me 時走 `claude.ai/code` session
@@ -32,7 +33,7 @@
 
 ## 分工計畫（一頁） / Work plan (one page)
 
-Kuei decision 2026-11-11 19:47. One page per task, fill every blank before work starts. Blank copy: [docs/work-plan-template.md](docs/work-plan-template.md).
+Kuei decision 2026-11-11 19:47. One page per task, fill every blank before work starts. Source of truth: [docs/work-plan-template.md](docs/work-plan-template.md). This section must match that file; if they differ, the file wins.
 
 Flow / 流程: Alex drafts → Chief reviews → Kuei approves the done-when → work starts. Independent tickets run in parallel. Never give a whole task to one agent to do in sequence.
 
@@ -61,7 +62,7 @@ Never Opus. This covers every role: build, fix rounds, and verification.
 | Role | Model | Rule |
 |------|-------|------|
 | build / 實作 | <model> | Writes the ticket. |
-| fix rounds / 修復輪 | <stronger model than build> | Stronger than the builder. |
+| fix rounds / 修復輪 | <stronger model than build> | Stronger than the builder. If none is stronger, use the same model and record it. |
 | verification / 驗證 | <model> | Different model family from the builder. When only one family is available, use it and record that model in the verdict. |
 
 Verdict / 驗證結論（fill after the check）: builder `<model>`, verifier `<model>`, family `<same / different>`, note `<if only one family: say so>`.
