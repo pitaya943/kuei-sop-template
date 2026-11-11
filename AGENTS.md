@@ -33,7 +33,7 @@
 
 ## 分工計畫（一頁） / Work plan (one page)
 
-Kuei decision 2026-11-11 19:47. One page per task, fill every blank before work starts. Source of truth: [docs/work-plan-template.md](docs/work-plan-template.md). This section must match that file; if they differ, the file wins.
+Kuei decision 2026-11-11 19:47. One page per task, fill every blank before work starts. This AGENTS.md section is the single source for the work plan; copy it per task. 本節就是分工計畫的唯一來源，每個任務複寫一份。
 
 Flow / 流程: Alex drafts → Chief reviews → Kuei approves the done-when → work starts. Independent tickets run in parallel. Never give a whole task to one agent to do in sequence.
 
