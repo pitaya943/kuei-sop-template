@@ -33,7 +33,7 @@
 
 ## 分工計畫（一頁） / Work plan (one page)
 
-Flow / 流程: Alex drafts → Chief reviews → Kuei approves the done-when → independent tickets run in parallel. 各自獨立的工單並行，不把整件事交給一個 agent 依序做完。
+Flow / 流程: Alex drafts → Chief reviews → Kuei approves each ticket's done-when in the ticket file → independent tickets run in parallel. 各自獨立的工單並行，不把整件事交給一個 agent 依序做完。完成條件在工單檔。
 Model / 模型: Never Opus. Fix rounds use a stronger model, and if none is stronger keep the same model and record it. Verification uses a different model family. 修復輪用更強的模型；沒有更強的就沿用同一模型並記錄。驗證用不同模型家族。
 Source / 準據: [docs/work-plan-template.md](docs/work-plan-template.md). 以 docs 檔為準 / the docs file wins.
 
@@ -59,10 +59,5 @@ Kuei decisions 2026-11-11 19:57、20:10、20:22（via Chief）。專案路徑與
 
 ## Docs / 文件
 
-Detail / 細則: [docs/README.md](docs/README.md). If this summary and `docs/` disagree, docs wins / 以 docs 檔為準. In-repo docs are bilingual EN + 繁體中文 side by side; identifiers stay untranslated / 文件中英並列，識別名稱不翻譯。
-1. Single source / 單一來源: one maintained file per fact; other files link. Work-plan source is `docs/work-plan-template.md`; approved plans are `docs/work-plans/<id>.md`. `AGENTS.md` keeps only the short summary and that link. 每個事實一個維護檔。核准後的計畫存 `docs/work-plans/<id>.md`。
-2. Boundary / 分界: `AGENTS.md` is short standing rules for every run. Templates, decisions, work plans, and milestone summaries live in `docs/`. `README.md` is for humans. `AGENTS.md` 只留每次都要讀的短規則；範本與資料在 `docs/`；`README.md` 給人看。
-3. Decisions / 決策: append a row to `docs/decisions.md` (問題｜選擇｜理由｜日期). A change is a new row that names the row it replaces. Switch to MADR files when the table grows. 只追加列；要改就新增一列。表格變長再改 MADR 檔。
-4. Same PR / 同一 PR: a behaviour change updates its living spec in that PR, and tests check the spec. The spec is not frozen. 行為與規格同一 PR 修改，測試檢查規格，規格不凍結。
-5. CI / 檢查: pull requests run markdownlint and lychee on these SOP docs, plus the PR checklist. No CODEOWNERS. PR 跑 markdownlint、lychee 與 checklist。沒有 CODEOWNERS。
-6. Vera / 驗證: before PASS, Vera checks the owning file was updated, the `AGENTS.md` summary still matches `docs/`, no parallel source was added, and spec citations still resolve. PASS 前核對來源已更新、摘要仍一致、沒有平行來源、引用仍對得上。
+Standing doc rules are only in [docs/README.md](docs/README.md). If this file and `docs/` disagree, docs wins.
+文件規則只寫在 [docs/README.md](docs/README.md)。本檔與 `docs/` 不一致時，以 docs 為準。

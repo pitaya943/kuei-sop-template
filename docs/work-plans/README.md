@@ -3,8 +3,8 @@
 Save each approved plan here as `<id>.md`.
 每一份已核可的計畫存成 `<id>.md`。
 
-Copy it from [`docs/work-plan-template.md`](../work-plan-template.md) after Kuei approves the done-when.
-Kuei 核可 done-when 之後，從 [`docs/work-plan-template.md`](../work-plan-template.md) 複寫。
+Copy it from [`docs/work-plan-template.md`](../work-plan-template.md) after Kuei approves each ticket's done-when in the ticket file.
+Kuei 在工單檔核可每張工單的完成條件之後，從 [`docs/work-plan-template.md`](../work-plan-template.md) 複寫。
 
 `docs/work-plan-template.md` stays the single source for the blank plan. These files are filled copies, not a second template.
 空白計畫仍以 `docs/work-plan-template.md` 為唯一來源。這裡的檔案是填好的複本，不是第二份範本。

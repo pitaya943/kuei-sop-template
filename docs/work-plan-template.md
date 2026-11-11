@@ -4,25 +4,29 @@ Kuei decision 2026-11-11 19:47. Copy this page per task. Fill every blank before
 
 Roles / 角色：Alex `<drafts the work plan>`，Chief `<reviews the plan>`，Vera `<verification; PASS before @claude review>`，Kuei `<approves done-when and merges>`。
 
-Flow / 流程: Alex drafts → Chief reviews → Kuei approves the done-when → work starts. Independent tickets run in parallel. Never give a whole task to one agent to do in sequence.
+Flow / 流程: Alex drafts → Chief reviews → Kuei approves each ticket's done-when in the ticket file → work starts. Independent tickets run in parallel. Never give a whole task to one agent to do in sequence.
 
 ## 1. Tickets / 工單（dependencies + parallel）
 
-| ID | Ticket | Depends on | Parallel group | Owner role |
-|----|--------|------------|----------------|------------|
-| T1 | <one outcome> | — | <A, or — if blocked> | build |
-| T2 | <one outcome> | <T1 / —> | <A if no shared files with T1, else after T1> | build |
+| ID | depends_on | Parallel group / 可並行組 |
+|----|------------|---------------------------|
+| [T-000](tickets/T-000.md) | `[]` | `<A>` |
+| [T-xxx](tickets/T-000.md) | `<T-000 or []>` | `<A if no shared files, else after the dependency>` |
 
 Parallel / 可並行: tickets in the same group, with no dependency on each other, run at the same time. A ticket that depends on another waits.
+可並行：同一組、且彼此沒有依賴的工單同時做。有依賴的工單要等。
 
-## 2. Done-when / 完成條件（each ticket）
+## 2. Plan done-when and Kuei approval / 計畫完成條件與核可
 
-| ID | Done-when（observable） |
-|----|-------------------------|
-| T1 | <command or check, and the result that counts as done> |
-| T2 | <command or check, and the result that counts as done> |
+Each ticket's done-when lives only in its ticket file. This section does not restate those criteria. It records what the whole plan must deliver, and the gate that Kuei approves every ticket done-when before work starts.
+每張工單的完成條件只寫在工單檔。本節不重述那些條件。這裡只記整份計畫要交出的結果，以及開工前 Kuei 核可每張工單完成條件的關卡。
 
-Kuei approves this table before any ticket starts.
+Plan-level done-when / 整份計畫的完成條件: `<what the whole plan must deliver / 整份計畫要交出什麼>`
+
+| ID | Ticket file / 工單檔 | Kuei approved (decisions.md timestamp) / Kuei 已核可（decisions.md 時間） |
+|----|----------------------|---------------------------------------------------------------------------|
+| T-000 | [docs/tickets/T-000.md](tickets/T-000.md) | `<YYYY-MM-DD HH:MM>` |
+| T-xxx | [docs/tickets/T-000.md](tickets/T-000.md) | `<YYYY-MM-DD HH:MM>` |
 
 ## 3. Model per role / 角色用哪個模型
 
@@ -61,5 +65,5 @@ Own ticket / 獨立工單: `<Tid>` — system-wide rules, item by item (each fie
 
 1. Alex drafts this page.
 2. Chief reviews tickets, dependencies, parallel groups, models, and the stop threshold.
-3. Kuei approves the done-when column.
+3. Kuei approves each ticket's done-when in the ticket file, and the timestamp is written in section 2. Kuei 在工單檔核可每張工單的完成條件，時間記在第 2 節。
 4. Work starts. Independent tickets run in parallel. Never hand the whole task to one agent to run in sequence.

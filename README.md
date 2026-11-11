@@ -42,8 +42,13 @@ Source: workflow adapted from https://github.com/anthropics/claude-code-action/b
 - `docs/README.md` — docs index and the rule that docs wins / 文件索引，以及以 docs 為準
 - `docs/work-plan-template.md` — work-plan source of truth / 分工計畫的唯一來源
 - `docs/work-plans/` — approved work plans (`<id>.md`) / 已核可的分工計畫
+- `docs/tickets/` — ticket files (`T-xxx.md`); done-when lives only there / 工單檔；完成條件只寫在這裡
 - `docs/milestones/` — milestone summary folder
-- `.github/workflows/claude.yml` — `@claude` mention trigger (needs App + secret)
+- `.github/workflows/docs.yml` — markdownlint and lychee; does not commit / 文件檢查，不 commit
+- `.github/workflows/claude.yml` — mention trigger (needs App + secret)
+- `.github/pull_request_template.md` — PR checklist / PR 檢查清單
+- `.markdownlint-cli2.yaml` — markdownlint config / markdownlint 設定
+- `lychee.toml` — link-check config / 連結檢查設定
 
 ## License note for vendored skills
 
