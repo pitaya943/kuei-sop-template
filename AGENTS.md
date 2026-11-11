@@ -62,7 +62,7 @@ Never Opus. This covers every role: build, fix rounds, and verification.
 | Role | Model | Rule |
 |------|-------|------|
 | build / 實作 | <model> | Writes the ticket. |
-| fix rounds / 修復輪 | <stronger model than build> | Stronger than the builder. If none is stronger, use the same model and record it. |
+| fix rounds / 修復輪 | <stronger model than build> | Stronger than the builder. |
 | verification / 驗證 | <model> | Different model family from the builder. When only one family is available, use it and record that model in the verdict. |
 
 Verdict / 驗證結論（fill after the check）: builder `<model>`, verifier `<model>`, family `<same / different>`, note `<if only one family: say so>`.
