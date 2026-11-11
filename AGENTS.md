@@ -15,8 +15,7 @@
 - <例：研究假設、實驗設計、評估指標>
 
 ## 審查深度
-- 一般 PR：Kuei 自己看報告
-- 重要 PR：加一次跨模型審查（Grok 寫的 → @claude review）
+- Vera PASS 之後，每個 PR 都跑 @claude review，然後 Kuei merge。
 - 重大變更：開工前再跑一次 interrogate（選用）
 - `@claude review` 只是審查，不會自動跑 grill-me；需要 grill-me 時走 `claude.ai/code` session
 
@@ -95,9 +94,22 @@ Own ticket / 獨立工單: `<Tid>` — system-wide rules, item by item (each fie
 3. Kuei approves the done-when column.
 4. Work starts. Independent tickets run in parallel. Never hand the whole task to one agent to run in sequence.
 
+## 開發規則 / Development rules
+
+Kuei decisions 2026-11-11 19:57、20:10、20:22（via Chief）。專案路徑與指令用 `<placeholder>`。
+
+1. **Spec first（SDD）**：規格在 `<spec path>`。規格不清楚就停，在 PR 問；不要猜。
+2. **先寫會失敗的測試，再寫實作**（TDD/BDD）。
+3. **每個拒絕案例**都斷言三件事：精確的 status code、精確的錯誤訊息、沒有寫入任何資料（含沒有寫到一半的資料）。
+4. **伺服器重驗每一個欄位**；不信任前端。缺值不得悄悄補預設值。
+5. **系統級規則先做逐項盤點表**；每一列都有 spec source、檢查位置（file:line）、test name。表的位置：`<inventory table path>`。
+6. **CI 全綠才算完成。** CI 不得自動 commit。只有 bullet-bots commit；唯一例外是 @claude review。
+7. **不 push main、不 force-push、不 merge。** 不碰 secrets；程式與 log 都不印 key。只改自己這張工單範圍內的檔案。
+8. **Never Opus。**
+9. **PR 報告中英並列**：做了什麼、證據（指令與結果）、未解問題、需要 Kuei 決定的事。指令：`<test commands>`。
+
 ## 預算備註
-- Claude Pro 額度緊：只用在對齊、學習、重要 PR 審查
-- 額度緊時不要每個 PR 都自動 `@claude`，只在重要 PR 手動加
+- Claude Pro 額度緊：對齊、學習，以及 Vera PASS 之後每個 PR 的 @claude review
 - 訂閱額度用完時會顯示重置時間（例如「5-hour limit reached - resets [time]」），不是 HTTP 429；429 屬於 API key 或容量問題
 - GitHub Action（`@claude`）可能與 claude.ai／Claude Code web 共用同一份 Pro 額度（推論，官方未明說）
 - <本專案的其他限制>
