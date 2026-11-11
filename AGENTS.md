@@ -16,7 +16,7 @@
 
 ## 審查深度
 - Roles / 角色：Alex `<drafts the work plan>`，Chief `<reviews the plan>`，Vera `<verification; PASS before @claude review>`，Kuei `<approves done-when and merges>`。
-- Vera PASS 之後，每個 PR 都跑 @claude review，然後 Kuei merge。
+- Vera PASS 之後，每個 PR 都跑 @claude review，然後 Kuei merge。Claude 額度用完時，Kuei 可不等該次 @claude review 直接合併，須記錄。When the Claude quota is exhausted, Kuei may merge without waiting for that @claude review, and it must be recorded.
 - 重大變更：開工前再跑一次 interrogate（選用）
 - `@claude review` 只是審查，不會自動跑 grill-me；需要 grill-me 時走 `claude.ai/code` session
 
@@ -62,7 +62,7 @@ Never Opus. This covers every role: build, fix rounds, and verification.
 | Role | Model | Rule |
 |------|-------|------|
 | build / 實作 | <model> | Writes the ticket. |
-| fix rounds / 修復輪 | <stronger model than build> | Stronger than the builder. |
+| fix rounds / 修復輪 | <stronger model than build> | Stronger than the builder. If no stronger non-Opus model exists, reuse the same model and record which model was used. 找不到更強且非 Opus 的模型時，可沿用同一模型，須記錄用了哪個模型。 |
 | verification / 驗證 | <model> | Different model family from the builder. When only one family is available, use it and record that model in the verdict. |
 
 Verdict / 驗證結論（fill after the check）: builder `<model>`, verifier `<model>`, family `<same / different>`, note `<if only one family: say so>`.
@@ -104,7 +104,7 @@ Kuei decisions 2026-11-11 19:57、20:10、20:22（via Chief）。專案路徑與
 3. **每個拒絕案例**都斷言三件事：精確的 status code、精確的錯誤訊息、沒有寫入任何資料（含沒有寫到一半的資料）。
 4. **伺服器重驗每一個欄位**；不信任前端。缺值不得悄悄補預設值。
 5. **系統級規則先做逐項盤點表**；每一列都有 spec source、檢查位置（file:line）、test name。表的位置：`<inventory table path>`。
-6. **CI 全綠才算完成。** CI 不得自動 commit。只有 bullet-bots commit；唯一例外是 @claude review。
+6. **CI 全綠才算完成。** CI 不得自動 commit。只有 bullet-bots commit；唯一例外是 @claude review：Kuei 要求時，Claude 可直接推修正 commit。When Kuei asks, Claude may push fix commits directly to the PR branch.
 7. **不 push main、不 force-push、不 merge。** 不碰 secrets；程式與 log 都不印 key。只改自己這張工單範圍內的檔案。
 8. **Never Opus。**
 9. **PR 報告中英並列**：做了什麼、證據（指令與結果）、未解問題、需要 Kuei 決定的事。指令：`<test commands>`。
