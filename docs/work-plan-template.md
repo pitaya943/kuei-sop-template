@@ -24,10 +24,12 @@ Kuei approves this table before any ticket starts.
 
 ## 3. Model per role / 角色用哪個模型
 
+Never Opus. This covers every role: build, fix rounds, and verification.
+
 | Role | Model | Rule |
 |------|-------|------|
 | build / 實作 | <model> | Writes the ticket. |
-| fix rounds / 修復輪 | <stronger model than build> | Stronger than the builder. Never Opus. |
+| fix rounds / 修復輪 | <stronger model than build> | Stronger than the builder. |
 | verification / 驗證 | <model> | Different model family from the builder. When only one family is available, use it and record that model in the verdict. |
 
 Verdict / 驗證結論（fill after the check）: builder `<model>`, verifier `<model>`, family `<same / different>`, note `<if only one family: say so>`.
@@ -44,12 +46,14 @@ Stop threshold / 停止門檻: <number>. Stop and ask Kuei when a ticket or the 
 
 ## 5. Inventory / 系統級規則盤點（own ticket）
 
-Own ticket / 獨立工單: `<Tid>` — system-wide rules (e.g. server-side validation of every field, permissions). Done-when: this table is complete (every rule has spec source, check site, and test name).
+Own ticket / 獨立工單: `<Tid>` — system-wide rules, item by item (each field, each route, each role/permission is one row). The ticket is done only when every item has its own row with spec line, file:line and test name.
 
-| Rule | Spec source | Where it is checked (file:line) | Test name |
-|------|-------------|----------------------------------|-----------|
-| <e.g. server-side validation of every field> | <doc / issue / ADR> | <path:line> | <test name> |
-| <e.g. permissions> | <doc / issue / ADR> | <path:line> | <test name> |
+| Rule | Item (field / route) | Spec source (doc + line) | Where checked (file:line) | Test name |
+|------|----------------------|--------------------------|---------------------------|-----------|
+| server-side validation of every field | email | <docs/spec.md:12> | <api/user.ts:40> | <rejects invalid email> |
+| server-side validation of every field | display name | <docs/spec.md:13> | <api/user.ts:44> | <rejects empty display name> |
+| permissions | POST /api/orders | <docs/spec.md:30> | <api/orders.ts:18> | <member cannot create order> |
+| permissions | DELETE /api/orders/:id | <docs/spec.md:31> | <api/orders.ts:55> | <member cannot delete order> |
 
 ## 6. Flow reminder / 流程（do not skip）
 
