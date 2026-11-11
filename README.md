@@ -15,7 +15,6 @@ Template repository for Kuei’s AI collaboration SOP（AI 協作 SOP 範本 rep
 5. You still need to set branch protection on `main`, install/authorize the Claude GitHub App for the new repo, and add the repo secret `CLAUDE_CODE_OAUTH_TOKEN` (see below).
    新專案還要自行設定 `main` 的 branch protection、把 Claude GitHub App 授權到該 repo，並加入 repo secret `CLAUDE_CODE_OAUTH_TOKEN`（見下方）。
 
-
 ## Enable `@claude` review on PRs / 啟用 PR 上的 `@claude` 審查
 
 This template includes [`.github/workflows/claude.yml`](.github/workflows/claude.yml) from the official [anthropics/claude-code-action](https://github.com/anthropics/claude-code-action) `@v1` example. Commenting `@claude review` (or any `@claude …`) on a PR or issue triggers Claude.
@@ -40,6 +39,9 @@ Source: workflow adapted from https://github.com/anthropics/claude-code-action/b
 - `CLAUDE.md` — one-line pointer to `AGENTS.md`
 - `.claude/skills/grill-me/`, `.claude/skills/teach/` — from [mattpocock/skills](https://github.com/mattpocock/skills) (MIT)
 - `docs/decisions.md` — decision log table
+- `docs/README.md` — docs index and the rule that docs wins / 文件索引，以及以 docs 為準
+- `docs/work-plan-template.md` — work-plan source of truth / 分工計畫的唯一來源
+- `docs/work-plans/` — approved work plans (`<id>.md`) / 已核可的分工計畫
 - `docs/milestones/` — milestone summary folder
 - `.github/workflows/claude.yml` — `@claude` mention trigger (needs App + secret)
 
