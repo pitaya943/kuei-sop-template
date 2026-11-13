@@ -16,7 +16,7 @@
 
 ## Review depth
 - Roles: Alex `<drafts the work plan>`, Chief `<reviews the plan>`, Vera `<verification; PASS before @claude review>`, Kuei `<approves done-when and merges>`.
-- After Vera PASS, every PR runs @claude review, then Kuei merges. When the Claude quota is exhausted, Kuei may merge without waiting for that @claude review, and it must be recorded.
+- After Vera PASS, every PR runs @claude review, then Kuei merges.
 - Major changes: run interrogate once more before work starts (optional)
 - `@claude review` is review only and does not automatically run grill-me; when grill-me is needed, use a `claude.ai/code` session
 
@@ -50,12 +50,6 @@ Kuei decisions 2026-11-11 19:57, 20:10, 20:22 (via Chief). Project paths and com
 7. **Do not push main, do not force-push, and do not merge.** Do not touch secrets; neither code nor logs print a key. Change only files in this ticket's scope.
 8. **Never Opus.**
 9. **PR bodies and comments are always in English**: what was done, evidence (commands and results), open questions, and decisions needed from Kuei. Commands: `<test commands>`.
-
-## Budget notes
-- Claude Pro quota is tight: alignment, learning, and the @claude review on every PR after Vera PASS
-- When the subscription quota runs out, it shows a reset time (for example "5-hour limit reached - resets [time]"), which is not HTTP 429; 429 is an API key or capacity issue
-- The GitHub Action (`@claude`) may share the same Pro quota with claude.ai / Claude Code web (inference; not stated officially)
-- <other limits for this project>
 
 ## Docs
 

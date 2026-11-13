@@ -5,7 +5,7 @@ Template repository for Kuei’s AI collaboration SOP.
 ## How to use
 
 1. On GitHub, open this repo and click **Use this template** → create a new private (or public) repo.
-2. Fill in the placeholders in `AGENTS.md` (project type, goal, milestones, decision gates, review depth, budget notes).
+2. Fill in the placeholders in `AGENTS.md` (project type, goal, milestones, decision gates, review depth).
 3. Keep or trim `.claude/skills/` (`grill-me`, `teach` by default). Add project-specific skills only when needed.
 4. Record decisions in `docs/decisions.md` and milestone summaries under `docs/milestones/`.
 5. You still need to set branch protection on `main`, install/authorize the Claude GitHub App for the new repo, and add the repo secret `CLAUDE_CODE_OAUTH_TOKEN` (see below).
