@@ -1,11 +1,11 @@
-## Checklist / 檢查
+## Checklist
 
-- [ ] Owning doc updated in this PR / 本 PR 已更新所屬文件
-- [ ] No new copy or parallel source / 沒有新增複本或平行來源
-- [ ] `AGENTS.md` summary still matches `docs/` / `AGENTS.md` 摘要仍與 `docs/` 一致
-- [ ] Decision appended to `docs/decisions.md` if any / 若有決策，已追加到 `docs/decisions.md`
-- [ ] Spec and tests updated together / 規格與測試一起更新
-- [ ] Work plan saved under `docs/work-plans/` if approved / 若已核可，計畫已存到 `docs/work-plans/`
+- [ ] Owning doc updated in this PR
+- [ ] No new copy or parallel source
+- [ ] `AGENTS.md` summary still matches `docs/`
+- [ ] Decision appended to `docs/decisions.md` if any
+- [ ] Spec and tests updated together
+- [ ] Work plan saved under `docs/work-plans/` if approved
 - [ ] Vera PASS
-- [ ] Kuei merges / 由 Kuei 合併
-- [ ] PR 正文已含交接最小欄位（見 kuei-common/handoff.md）：From 行、模型、工單路徑與 milestone、agent URL、做了什麼、證據、未解問題、需 Kuei 決定的事
+- [ ] Kuei merges
+- [ ] PR body includes the handoff minimum fields (see kuei-common/handoff.md): From line, model, ticket path and milestone, agent URL, what was done, evidence, open questions, and decisions needed from Kuei
