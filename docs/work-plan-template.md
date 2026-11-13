@@ -38,17 +38,7 @@ Never Opus. This covers every role: build, fix rounds, and verification.
 
 Verdict (fill after the check): builder `<model>`, verifier `<model>`, family `<same / different>`, note `<if only one family: say so>`.
 
-## 4. Usage estimate and stop threshold
-
-| ID | Estimate | Notes |
-|----|----------|-------|
-| T1 | <e.g. N agent-turns or $X> | |
-| T2 | <e.g. N agent-turns or $X> | |
-| **Total** | <sum> | |
-
-Stop threshold: <number>. Stop and ask Kuei when a ticket or the total reaches this. Do not keep spending past it.
-
-## 5. Inventory (own ticket)
+## 4. Inventory (own ticket)
 
 Own ticket: `<Tid>` — system-wide rules, item by item (each field, each route, each role/permission is one row). The ticket is done only when every item has its own row with spec line, file:line and test name.
 
@@ -59,9 +49,9 @@ Own ticket: `<Tid>` — system-wide rules, item by item (each field, each route,
 | permissions | POST /api/orders | <docs/spec.md:30> | <api/orders.ts:18> | <member cannot create order> |
 | permissions | DELETE /api/orders/:id | <docs/spec.md:31> | <api/orders.ts:55> | <member cannot delete order> |
 
-## 6. Flow reminder (do not skip)
+## 5. Flow reminder (do not skip)
 
 1. Alex drafts this page.
-2. Chief reviews tickets, dependencies, parallel groups, models, and the stop threshold.
+2. Chief reviews tickets, dependencies, parallel groups, and models.
 3. Kuei approves each ticket's done-when in the ticket file, and the timestamp is written in section 2.
 4. Work starts. Independent tickets run in parallel. Never hand the whole task to one agent to run in sequence.

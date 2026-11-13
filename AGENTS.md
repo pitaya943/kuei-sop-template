@@ -51,12 +51,6 @@ Kuei decisions 2026-11-11 19:57, 20:10, 20:22 (via Chief). Project paths and com
 8. **Never Opus.**
 9. **PR bodies and comments are always in English**: what was done, evidence (commands and results), open questions, and decisions needed from Kuei. Commands: `<test commands>`.
 
-## Budget notes
-- Claude Pro quota is tight: alignment, learning, and the @claude review on every PR after Vera PASS
-- When the subscription quota runs out, it shows a reset time (for example "5-hour limit reached - resets [time]"), which is not HTTP 429; 429 is an API key or capacity issue
-- The GitHub Action (`@claude`) may share the same Pro quota with claude.ai / Claude Code web (inference; not stated officially)
-- <other limits for this project>
-
 ## Docs
 
 Standing doc rules are only in [docs/README.md](docs/README.md). If this file and `docs/` disagree, docs wins.
