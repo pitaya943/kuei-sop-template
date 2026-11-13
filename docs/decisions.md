@@ -1,4 +1,4 @@
 # Decisions
 
-| 問題 | 選擇 | 理由 | 日期 |
+| Question | Choice | Reason | Date |
 | --- | --- | --- | --- |
