@@ -8,3 +8,4 @@
 - [ ] Work plan saved under `docs/work-plans/` if approved / 若已核可，計畫已存到 `docs/work-plans/`
 - [ ] Vera PASS
 - [ ] Kuei merges / 由 Kuei 合併
+- [ ] PR 正文已含交接最小欄位（見 kuei-common/handoff.md）：From 行、模型、工單路徑與 milestone、agent URL、做了什麼、證據、未解問題、需 Kuei 決定的事
