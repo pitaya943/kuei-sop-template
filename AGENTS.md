@@ -16,7 +16,7 @@
 
 ## Review depth
 - Roles: Alex `<drafts the work plan>`, Chief `<reviews the plan>`, Vera `<verification; PASS before @claude review>`, Kuei `<approves done-when and merges>`.
-- After Vera PASS, every PR runs @claude review, then Kuei merges.
+- After Vera PASS, every PR runs @claude review, then Kuei merges. When the Claude quota is exhausted, Kuei may merge without waiting for that @claude review, and it must be recorded.
 - Major changes: run interrogate once more before work starts (optional)
 - `@claude review` is review only and does not automatically run grill-me; when grill-me is needed, use a `claude.ai/code` session
 
